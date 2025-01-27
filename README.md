@@ -12,14 +12,19 @@ docker run github-runner \
 
 ## Docker Compose 
 
+Using Env variables 
 ```
 name: Github Selfhosted Runner
 services:
     github-runner:
-        image: github-runner
+        image: ghcr.io/johnciavarella/github_runner_docker:main
         environment:
             REPO_URL={your_github_repo}
             RUNNER_TOKEN={your_runner_token}
+# Suggested to use secrets 
+#        secrets: 
+#            - REPO_URL
+#            - RUNNER_TOKEN
 ```
 
 ## Build from dockerfile 
